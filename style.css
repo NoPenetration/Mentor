@@ -1,0 +1,521 @@
+﻿/*_________________________________*/
+/*_Czcionki_*/
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Jura:300,400,600&subset=latin-ext');
+
+/*_________________________________*/
+/*_Fontello - czyli te fajne ikonki xD_*/
+@font-face {
+      font-family: 'fontello';
+      src: url('./font/fontello.eot?50155571');
+      src: url('./font/fontello.eot?50155571#iefix') format('embedded-opentype'),
+           url('./font/fontello.woff?50155571') format('woff'),
+           url('./font/fontello.ttf?50155571') format('truetype'),
+           url('./font/fontello.svg?50155571#fontello') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+.demo-icon {
+      font-family: "fontello";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      margin-right: .2em;
+      text-align: center;
+      /* opacity: .8; */
+
+      /* For safety - reset parent styles, that can break glyph codes*/
+      font-variant: normal;
+      text-transform: none;
+
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 1em;
+
+      /* Animation center compensation - margins should be symmetric */
+      /* remove if not needed */
+      margin-left: .2em;
+
+      /* You can be more comfortable with increased icons size */
+      /* font-size: 120%; */
+
+      /* Font smoothing. That was taken from TWBS */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+	}
+#compulsory {
+  font-size: 1.6vmin;
+  color: red;
+}
+#contact {
+	width: 100vw;
+	height: 100vh;
+}
+#contact_form {
+  max-width: 92vmin;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 90vmin;
+  margin-top: 2vmin;
+  border: 1vmin dashed #C4DFE6;
+  padding: 2vmin;
+  background-color: #003b46;
+  border-top-right-radius: 15vmin;
+  border-bottom-right-radius: 10vmin;
+  border-bottom-left-radius: 15vmin;
+}
+#contact_input p {
+  font-family: monospace;
+  color: #C4DFE6;
+  margin-bottom: 1vmin;
+}
+input, textarea {
+  font-family: monospace;
+  margin-bottom: 2vmin;
+  font-size: 3vmin;
+}
+.open_q {
+  width: 100%;
+  height: 3em;
+}
+.form_element {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: #C4DFE6;
+}
+#center {
+  position: center;
+  text-align: center;
+}
+
+/*_______________________________________________________*/
+/*_Ustawienia ogólne__*/
+* {
+	padding: 0;
+	margin: 0;
+}
+html, body {
+	margin:0;
+	padding:0;
+	height:100%;
+	width:100%;
+	cursor: default;
+	user-select: none;
+}
+body {
+	font-family: 'Jura', sans-serif;
+	/*font-family: 'Comfortaa', cursive;*/
+	font-size: 3vmin;
+  background-color: #66A5AD;
+  color: #C4DFE6;
+}
+
+/*Landing Page*/
+/*________________________________________________________*/
+/*_To działa, tu proszę ne grzebać :P_*/
+.help {
+	height: 100%;
+	width: 100%;
+	background: #000;
+	position: absolute;
+	z-index: 2;
+}
+.intro {
+	text-align:  center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #000;
+}
+.intro span {
+    margin-left: auto;
+    margin-right: auto;
+	/*text-transform: uppercase;*/
+	display: block;
+}
+.text1 {
+	color:white;
+	font-size: 80px;
+	font-weight: 700;
+	letter-spacing: 8px;
+	margin-bottom: 20px;
+	position: relative;
+	background: black;
+	animation: text 4s 1;
+}
+.intro a {
+	letter-spacing: 1px;
+	text-shadow:none;
+ 	transition: all .5s ease-in;
+	background: none;
+	border: none;
+}
+.intro a:hover {
+	letter-spacing:5px;
+	color: #00CED1;
+	text-shadow: 0px 0px 5px #00CED1;
+}
+#skip_intro{
+  color: white;
+  margin-left: 5%;
+  margin-top: 90%;
+  position: fixed;
+  animation: fOut 5s 1;
+  animation-fill-mode:forwards;
+}
+@keyframes fOut
+{
+  50%{
+    opacity: 1;
+  }
+  80%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+.text2 {
+	font-size: 25px;
+	color: #478594;
+}
+@keyframes text {
+	0%{
+		color: black;
+		margin-bottom: -40px;
+		letter-spacing: 8px
+	}
+	30%{
+		letter-spacing: 40px;
+		margin-bottom: -40px;
+	}
+	85%{
+		letter-spacing: 8px;
+		margin-bottom: -40px;
+	}
+}
+
+/*_________________________________________*/
+/*_Ustawienia dla pojemników - czyli wszystkich "stron"_*/
+/*_głównie chodzi o to by faktycznie zajmowały całą stronę_*/
+/*_oraz przypisanie ich display jako flexbox_*/
+.container {
+	height: 100vh;
+	max-width: 100vw;
+  	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    overflow: hidden;
+}
+
+.container div h2 {
+	margin: 2vmin;
+	text-align: center;
+}
+/*_Ustawienia pomocnicze - zostały użyte do testowania układu strony_*/
+.item {
+	margin: 1vmin;
+ 	background: #07575B;
+  	text-align: center;
+}
+/*_Ustawienia dla grup (2 i 3 strona)_*/
+/*_Ustawienie flex direction na kolumny_*/
+.group {
+	width: 85%;
+	height: 60%;
+  	border:0;
+
+  	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+
+	flex-direction: column;
+  	justify-content: space-around;
+	align-items: stretch;
+}
+
+/*_________________________________*/
+/*_Ustawienia dla linków na pierwszej stronie_*/
+/*_Hover i takie tam_*/
+/*_PAMIĘTAĆ - NIE ustawiać outline na none_*/
+a div{
+	transition: all .5s ease-in;
+}
+
+a:link {
+	text-decoration: none;
+}
+a:visited  {
+	text-decoration: none;
+}
+a div:hover {
+	text-decoration: none;
+	transition: all .5s ease-in;
+}
+
+#first div:hover {
+	transition: all .5s ease-in;
+	height: 30vmin;
+	width: 30vmin;
+	margin-left: 0vmin; 
+	margin-right: 0vmin;
+	font-size: 18vmin;
+	text-shadow:0px 0px 10px #FFF;
+}
+/*
+div .icon-user-plus:hover {
+	color: #FFA726;
+	transition: all .5s ease-in;
+}*/
+
+/*_________________________________*/
+/*_Pierwsza strona - z przyciskami_*/
+/*_Ustawienia flexboxa_*/
+#first {
+  	justify-content: center;
+  	align-items: center;
+}
+/*_Ustawienia wszystkich divów na pierwsze stronie_*/
+/*_Ich rozmiar i umiejscownie_*/
+#first div {
+	height: 25vmin;
+	width: 25vmin;
+	display: flex;
+	margin-left: 2.5vmin; 
+	margin-right: 2.5vmin;
+	flex-direction: column;
+  justify-content: center;
+  align-items: center;
+	font-size: 15vmin;
+	transition: all .5s ease-in;
+  color: #C4DFE6;
+}
+
+#first p {
+	font-size: 3vmin;
+}
+
+#first div p {
+	margin-top: 1vh;
+}
+/*_Ustawnia font size w i_*/
+
+/*_________________________________*/
+/*_Druga i trzecia strona_*/
+/*_Ustawienia flexboxa _*/
+/*_i dodatkowe ustawienia dla drugiej strony _*/
+#second, #third {
+	max-height: 100vh;
+	max-width: 100vw;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+#second i {
+	margin: 1vmin;
+	font-size: 8vmin;
+}
+#second .group .item{
+  padding-left: 5vmin;
+  padding-right: 5vmin;
+  padding-bottom: 3vmin;
+  height: auto;
+}
+/*_Ustawienia dla wszyskich diwów w grupach_*/
+.group div {
+    border-radius: 5vmin 18vmin 15vmin 15vmin;
+  	height: auto;
+}
+/*_Ustawienia flexboxa dla textu koła naukowego _*/
+/*_po prostu ładne wycentrowanie _*/
+#wheelP, #loc {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+ 	justify-content: center;
+ 	align-items: center;
+  border-radius: 10vmin;
+  padding: 5vmin;
+}
+/*_Ustawienia dla dwóch pojemników na divy _*/
+/*_kilka divów w jednej linii poziomej _*/
+#tech {
+  	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    justify-content: space-around;
+    align-items: stretch;
+    width: 100%;
+  	height: 30%;
+}
+#tech2 {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    justify-content: space-around;
+    align-items: stretch;
+    width: 100%;
+    height: 30%;
+}
+
+#bodyM1 {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    justify-content: space-around;
+  align-items: stretch;
+
+  height: 30%;
+}
+/*sposób na wystające poza div elementy*/
+/* slightly enhanced, universal clearfix hack */
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: "";
+     clear: both;
+     height: 0;
+     }
+
+
+.clearfix { display: inline-block; }
+/* start commented backslash hack \\*/
+* html .clearfix { height: 1&#37;; }
+.clearfix { display: block; }
+
+
+/* close commented backslash hack */
+/*_Ustawienia dla divów w pojemnikach_*/
+#bodyM1 div, #tech div, #tech2 div{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    justify-content: center;
+	width: 33%;
+  height: 100%;
+	background-color: none;
+	text-align: center;
+}
+/*_Ustawienia obrazków_*/
+#css, #html, #csharp, #net, #js {
+  max-width: 85%;
+  max-height: 85%;
+  position: center;
+	transition: all .5s ease-in;
+}
+
+#css:hover, #html:hover, #csharp:hover, #net:hover, #js:hover {
+  max-width: 95%;
+  max-height: 95%;
+  position: center;
+	transition: all .5s ease-in;
+}
+
+
+
+/*_________________________________*/
+/*_Ustawienia naszego footera_*/
+/*_o po prostu ładne, pełne kolumny_*/
+#last {
+  	justify-content: space-around;
+	align-items: stretch;
+	background-color: #478594;
+	height: 100%
+}
+
+#for {
+	height: 66vh;
+	max-width: 100vw;
+	text-align: center;
+	font-size: 2vh;
+}
+
+#for div {
+
+	background-color: #478594;
+}
+/*_Wszystkie divy bezpośrednio w footerze mają określoną szerokość_*/
+#last > div {
+
+	width: 30%;
+}
+
+/*_________________________________*/
+/*_Ustawienia dla sektora z logami_*/
+#logos, #more {
+  	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+
+	flex-direction: column;
+  	justify-content: center;
+  	align-items: center;
+}
+/*_Ustawienie max szerokości dla diva obrazków_*/
+#logos div {
+	height: auto;
+	width: auto;
+	max-width: 20vmin;
+}
+/*_Ustawienia obrazków_*/
+#logos div img {
+    max-height: 100%;
+    max-width: 100%;
+    position: center;
+}
+
+
+/*________________________________*/
+/*_Ustawnia dla dodatkowych ikonek_*/
+/*_i tak - kiedyś zrobimy sobie google driva xD_*/
+#more i {
+	font-size: 10vmin;
+	margin-top: 2vmin;
+}
+#more {
+
+}
+.icon-github-circled-alt2:hover {
+	color: black;
+	transition: all .5s ease-in;
+}
+.icon-cloud:hover {
+	color: red;
+	transition: all .5s ease-in;
+}
+.icon-facebook:hover {
+	color: #3b5998;
+	transition: all .5s ease-in;
+}
+.icon-facebook, .icon-cloud, .icon-github-circled-alt2{
+	transition: all .5s ease-in;
+  color: #C4DFE6;
+}
+
+
+#loc p{
+	text-align: center;
+	font-size: 3vmin;
+}
+
+#foot{
+  font-size: 1.5vmin;
+}
+/*Changes for Mobile*/
+/*________________________________________________________*/
+/*_Czyli nasza ułomna responsywność_*/
+/*_nad tym trzeba mocno popracować_*/

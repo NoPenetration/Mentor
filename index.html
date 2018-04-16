@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+	<head>
+		<meta charset="utf-8" />
+		<title>Mentor</title>
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+		<link rel="stylesheet" href="style.css" type="text/css" />
+
+		<script type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<script src="jquery.scrollTo.min.js"></script>
+
+		<script>
+			jQuery(function($)
+			{
+					//reset scrolla bo niekiedy świruje
+				$.scrollTo(0);
+				$('#link1').click(function(){ $.scrollTo($('#third'), 2000); });
+
+				$('#link2').click(function(){ $.scrollTo($('#second'), 4000); });
+				$('#link3').click(function(){ $.scrollTo($('#fourth'), 6000); });
+			});
+		</script>
+	</head>
+
+	<body>
+
+		<div class="help">
+			<div class="intro">
+						<span class="text1">Mentor</span>
+						<a class="text2">Rozpocznij przygodę</a>
+			</div>						
+		</div>
+
+		<div class="container" id="first">
+			<a id="link1"><div class="item"><i class="demo-icon icon-info">&#xe801;</i><p>O nas</p></div></a>
+			<a id="link2"><div class="item"><i class="demo-icon icon-users">&#xe800;</i><p>Zespół</p></div></a>
+			<a id="link3"><div class="item"><i class="demo-icon icon-user-plus">&#xf234;</i><p>Dołącz do nas</p></div></a>
+		</div>
+
+		<div class="container" id="third">
+			<div class="group clearfix">
+				<h2>O nas</h2>
+				<div class="item" id="wheelP"><p>Koło Naukowe Mentor zostało utworzone przez grupę studentów Wydzialu Zarządzania przy Katedrze Informatyki Stosowanej. Naszym założeniem jest pogłębianie tajników wiedzy z zakresu programowania.</p></div>
+				<br/>
+				<div id="tech">
+					<div><img src="images/html.png"  id="html"  alt=""></div>
+					<div><img src="images/css.png" id="css"  alt=""></div>
+					<div><img src="images/js.png" id="js"  alt=""></div>
+				</div>
+				<div id="tech2">
+					<div><img src="images/csharp.png" id="csharp"  alt=""></div>
+					<div><img src="images/net.png" id="net"  alt=""></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container" id="second">
+			<div class="group clearfix">
+				<h2>Zespół</h2>
+				<div class="item" id="headM"><i class="demo-icon icon-users">&#xe800;</i><p>Adiunkt w Katedrze Informatyki Stosowanej na Wydziale Zarządzania AGH.  Odpowiedzialny jest za rozwój naukowy oraz wsparcie merytoryczne.</p></div>
+				<div class="item" id="hearthM"><i class="demo-icon icon-users">&#xe800;</i><p>Studentka 3 roku Informatykii i ekonometrii. Pasjonatka podróży, informatyki i zarządzania. W zarządzie pełni rolę prezesa skupiając się na koordynowaniu projektów.</p></div>
+				<div id="bodyM1">
+					<div class="item"><i class="demo-icon icon-users">&#xe800;</i><p>Członek zarządu</p></div>
+					<div class="item"><i class="demo-icon icon-users">&#xe800;</i><p>Członek zarządu</p></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container" id="fourth">
+			<form id="contact_form">
+				<div>
+					<h2 id="contact_title" class="form_element">Jeśli interesujesz się programowaniem i jesteś ciekawy jak wygląda u nas tworzenie aplikacji od podstaw, przyjdź na spotkanie koła albo skontaktuj się z nami!
+					</h2>
+					<h5 class="form_element"> <i>Zajęcia odbywają się w każdy poniedziałek o godz. 13:15 w sali 3.7 budynku Wydziału Zarządzania AGH
+					</i></h5>
+				</br>
+				<div id="contact_input">
+					<p>Imię i nazwisko*</p>
+					<input id="imie" type="text" placeholder="Imię"/>
+					<input id="nazwisko" type="text" placeholder="Nazwisko"/>
+					<p>Dlaczego chcesz do nas dołączyć?*</p>
+					<textarea id="why_join"class="open_q" type="area" placeholder="Uwielbiam programować i chcę zdobyć większą wiedzę oraz zdobyć doświadczenie w pracy w zespole"></textarea>
+					<p>Jakie masz zainteresowania?</p>
+					<textarea id="interests" class="open_q"type="area" placeholder="Piłka nożna, pływanie, tworzenie stron internetowych"></textarea>
+					<p id="compulsory"></p>
+				</div>
+				<p id="center"><a id="mail" class="form_element" href="#contact_form" onclick="mail_it()" target="_self">&nbsp&nbsp&nbspWyślij e-mail&nbsp&nbsp&nbsp</a></p>
+				<script>
+					function mail_it() {
+						var alert_message = "";
+						if(document.getElementById("imie").value=="")
+						{
+							alert_message+="Nie wpisano imienia!\n";
+						}
+						if(document.getElementById("nazwisko").value=="")
+						{
+							alert_message+="Nie wpisano nazwiska!\n";
+						}
+						if(document.getElementById("why_join").value=="")
+						{
+							alert_message+="Nie wpisano powodu, dla którego chcesz dołączyć!\n";
+						}
+						if(alert_message != "")
+						{
+							document.getElementById('compulsory').innerHTML = alert_message;
+							return;
+						}
+						else {
+							document.getElementById('compulsory').innerHTML = "";
+						}
+						var imie_nazw = document.getElementById("imie").value+
+						" "+
+						document.getElementById("nazwisko").value;
+						t = "mailto:KNMentor@gmail.com"+
+							"?subject=Rekrutacja: "+
+							imie_nazw+
+							"&body=Chcę dołączyć do koła naukowego \"Mentor\", ponieważ:%0A"+
+							document.getElementById("why_join").value+
+							"%0A-------------------------------------%0A"+
+							imie_nazw
+							;
+						alert(t);
+						document.getElementById("mail").target = "_blank";
+						document.getElementById("mail").href = t;
+						}
+				</script>
+			</div>
+			</form>
+		</div>
+
+		<div id="for">
+			<div class="container" id="last">
+				<div id="logos">
+					<div><img id="im1" src="images/mentor.png"  alt=""></div>
+					<div id="im2"><img  src="images/wz.png" alt=""></div>
+					<div id="im3"><img src="images/agh.png" alt=""></div>
+				</div>
+				<div id="loc">
+					<p>
+						Wydział Zarządzania<br/>
+						Akademia Górniczo-Hutnicza<br/>
+						im. Stanisława Staszica<br/>
+						ul. Gramatyka 10<br/>
+						30-067 Kraków<br/>
+						NIP AGH: 6750001923
+					</p>
+				</div>
+				<div id="more">
+					<p>Śledź nas:</p>
+					<a href="https://www.facebook.com/groups/295643830927683/?ref=br_rs"><i class="demo-icon icon-facebook">&#xf30c;</i></a>
+					<a href="https://www.dropbox.com/"><i class="demo-icon icon-cloud">&#xe805;</i></a>
+					<a href="https://github.com/"><i class="demo-icon icon-github-circled-alt2">&#xf056;</i></a>
+				</div>
+			</div>
+			<div id="foot">
+				<p>Copyright &copy; 2018 by KN Mentor, Desing&amp;Development: Sabina Golonka, Krzysztof Nowicki, Tomasz Wieroński</p>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+		$('.text2, #skip_intro').on('click', function(){
+			setTimeout(function(){
+ 		 	$('.help').fadeOut(2000);
+			}, 1);});
+		</script>
+<!--
+		<script type="text/javascript">
+		$('#im2').on('mouseover', function() {
+	 		$(this).find('img').attr('src', 'images/zarz.png');
+			});
+		$('#im2').on('mouseleave', function() {
+	 		$(this).find('img').attr('src', 'images/zar.png');
+			});
+
+		$('#im3').on('mouseover', function() {
+	 		$(this).find('img').attr('src', 'images/ag.png');
+			});
+		$('#im3').on('mouseleave', function() {
+	 		$(this).find('img').attr('src', 'images/agh.png');
+			});
+		</script>
+	-->
+	</body>
+
+
+</html>
