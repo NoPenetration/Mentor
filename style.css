@@ -54,6 +54,10 @@
 	width: 100vw;
 	height: 100vh;
 }
+#fourth {
+  width: 100vw;
+  height: 100vh;
+}
 #contact_form {
   max-width: 92vmin;
   margin-left: auto;
@@ -102,7 +106,7 @@ html, body {
 	margin:0;
 	padding:0;
 	height:100%;
-	width:100%;
+	width:100vw;
 	cursor: default;
 	user-select: none;
 }
@@ -110,8 +114,11 @@ body {
 	font-family: 'Jura', sans-serif;
 	/*font-family: 'Comfortaa', cursive;*/
 	font-size: 3vmin;
+  width:100vw;
+
   background-color: #66A5AD;
   color: #C4DFE6;
+  /*overflow-y: hidden;*/
 }
 
 /*Landing Page*/
@@ -133,9 +140,8 @@ body {
 	background: #000;
 }
 .intro span {
-    margin-left: auto;
-    margin-right: auto;
-	/*text-transform: uppercase;*/
+  margin-left: auto;
+   margin-right: auto;
 	display: block;
 }
 .text1 {
@@ -168,8 +174,7 @@ body {
   animation: fOut 5s 1;
   animation-fill-mode:forwards;
 }
-@keyframes fOut
-{
+@keyframes fOut{
   50%{
     opacity: 1;
   }
@@ -205,15 +210,9 @@ body {
 /*_głównie chodzi o to by faktycznie zajmowały całą stronę_*/
 /*_oraz przypisanie ich display jako flexbox_*/
 .container {
-	/*height: 100vh;*/
-	max-width: 100vw;
-  	display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    overflow: hidden;
+	height: 100vh;
+	max-width:100%;
 }
-
 .container div h2 {
 	margin: 2vmin;
 	text-align: center;
@@ -222,22 +221,22 @@ body {
 .item {
 	margin: 1vmin;
  	background: #07575B;
-  	text-align: center;
+  text-align: center;
 }
 /*_Ustawienia dla grup (2 i 3 strona)_*/
 /*_Ustawienie flex direction na kolumny_*/
 .group {
 	width: 85%;
 	height: 60%;
-  	border:0;
+  border:0;
 
-  	display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
 
 	flex-direction: column;
-  	justify-content: space-around;
+  justify-content: space-around;
 	align-items: stretch;
 }
 
@@ -285,17 +284,9 @@ div .icon-user-plus:hover {
     display: -webkit-flex;
     justify-content: center;
     align-items: center;
+
     width: 100vw;  
     height: 80vh;
-}
-#first_plus {
-
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    flex-direction: column;
-    justify-content: space-around;
 }
 /*_Ustawienia wszystkich divów na pierwsze stronie_*/
 /*_Ich rozmiar i umiejscownie_*/
@@ -328,15 +319,13 @@ div .icon-user-plus:hover {
 /*_i dodatkowe ustawienia dla drugiej strony _*/
 #second, #third {
   display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-  max-height: 80vh;
-  min-height: 80vh;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   width: 100%;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 #second i {
   margin: 1vmin;
@@ -374,9 +363,8 @@ div .icon-user-plus:hover {
     display: -ms-flexbox;
     display: -webkit-flex;
     justify-content: space-around;
-  align-items: stretch;
-
-  height: 25vmin;
+    align-items: stretch;
+    height: 25vmin;
 }
 /*sposób na wystające poza div elementy*/
 /* slightly enhanced, universal clearfix hack */
@@ -400,22 +388,22 @@ div .icon-user-plus:hover {
 /*_Ustawienia dla divów w pojemnikach_*/
 #bodyM1 div, #tech div, #tech2 div{
   width: 100%;
-    height: 100%;
+  height: 100%;
   background-color: none;
   text-align: center;
 }
 /*_Ustawienia obrazków_*/
 #css, #html, #csharp, #net, #js {
-    max-width: 85%;
-    max-height: 85%;
-    position: center;
+  max-width: 85%;
+  max-height: 85%;
+  position: center;
   transition: all .5s ease-in;
 }
 
 #css:hover, #html:hover, #csharp:hover, #net:hover, #js:hover {
-    max-width: 95%;
-    max-height: 95%;
-    position: center;
+  max-width: 95%;
+  max-height: 95%;
+  position: center;
   transition: all .5s ease-in;
 }
 
@@ -426,15 +414,24 @@ div .icon-user-plus:hover {
 /*_Ustawienia naszego footera_*/
 /*_o po prostu ładne, pełne kolumny_*/
 #last {
-  	justify-content: space-around;
-	align-items: stretch;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: space-around;
+  align-items: stretch;
+
+
+  overflow: hidden;
+  max-height: 64vh;
+  min-height: 64vh;
 	background-color: #478594;
 	height: 100%
 }
 
 #for {
-	height: 66vh;
-	max-width: 100vw;
+  max-height: 66%;
+  min-height: 66%;
 	text-align: center;
 	font-size: 2vh;
 }
@@ -508,7 +505,7 @@ div .icon-user-plus:hover {
 	font-size: 3vmin;
 }
 
-#foot{
+#foot{;
   font-size: 1.5vmin;
 }
 
@@ -523,6 +520,19 @@ div .icon-user-plus:hover {
   background-repeat: no-repeat;
   max-height: 20%;
   min-height: 20%;
+  min-width: 100%;
+  max-width: 100%;
+}
+.bg2 {
+  margin-bottom: 0;
+  margin-top: auto;
+  background-image: url(images/bg2.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-height: 34%;
+  min-height: 34%;
   min-width: 100%;
   max-width: 100%;
 }
