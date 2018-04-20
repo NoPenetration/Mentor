@@ -22,20 +22,33 @@
 				$('#link1').click(function(){ $.scrollTo($('#th'), 2000); });
 				$('#link2').click(function(){ $.scrollTo($('#second'), 4000); });
 				$('#link3').click(function(){ $.scrollTo($('#fourth'), 6000); });
+
+
+				$('#nav1').click(function(){ $.scrollTo($('#fi'), 2000); });
+				$('#nav2').click(function(){ $.scrollTo($('#th'), 2000); });
+				$('#nav3').click(function(){ $.scrollTo($('#second'), 2000); });
+				$('#nav4').click(function(){ $.scrollTo($('#fourth'), 2000); });
+				$('#nav5').click(function(){ $.scrollTo($('#last'), 2000); });
 			});
 		</script>
 	</head>
 
 	<body>
-		<!--
-		<div class="help">
+		<div class="help container">
 			<div class="intro">
 						<span class="text1">Mentor</span>
 						<a class="text2">Rozpocznij przygodę</a>
 			</div>						
 		</div>
-		-->
-		<div class="container">
+		<div id="nav">
+			<a id="nav1"><div><i class="demo-icon icon-home">&#xe804;</i></div></a>
+			<a id="nav2"><div ><i class="demo-icon icon-info">&#xe801;</i></div></a>
+			<a id="nav3"><div ><i class="demo-icon icon-users">&#xe800;</i></div></a>
+			<a id="nav4"><div><i class="demo-icon icon-user-plus">&#xf234;</i></div></a>
+			<a id="nav5"><div><i class="demo-icon icon-book-open">&#xe806;</i></div></a>
+		</div>
+
+		<div class="container" id="fi">
 			<div id="first">
 					<a id="link1"><div class="item"><i class="demo-icon icon-info">&#xe801;</i><p>O nas</p></div></a>
 					<a id="link2"><div class="item"><i class="demo-icon icon-users">&#xe800;</i><p>Zespół</p></div></a>
@@ -68,11 +81,21 @@
 		<div class="container" id="second">
 			<div class="group clearfix">
 				<h2>Zespół</h2>
-				<div class="item" id="headM"><i class="demo-icon icon-users">&#xe800;</i><p>Adiunkt w Katedrze Informatyki Stosowanej na Wydziale Zarządzania AGH.  Odpowiedzialny jest za rozwój naukowy oraz wsparcie merytoryczne.</p></div>
-				<div class="item" id="hearthM"><i class="demo-icon icon-users">&#xe800;</i><p>Studentka 3 roku Informatykii i ekonometrii. Pasjonatka podróży, informatyki i zarządzania. W zarządzie pełni rolę prezesa skupiając się na koordynowaniu projektów.</p></div>
+
+				<div class="item nice_shape" >
+					<div id="headMbg" onmouseover="hover('Adiunkt w Katedrze Informatyki Stosowanej na Wydziale Zarządzania AGH.  Odpowiedzialny jest za rozwój naukowy oraz wsparcie merytoryczne.')"
+					onmouseout="hover('Jerzy Duda')"><img class="img" src="images/bond.png"></div>
+					<div id="headM" >
+						Jerzy Duda
+					</div>
+					<!--<i class="demo-icon icon-users">
+					&#xe800;</i>-->
+				</div>
+
+				<div class="item nice_shape"> <i class="demo-icon icon-users">&#xe800;</i><p>Studentka 3 roku Informatykii i ekonometrii. Pasjonatka podróży, informatyki i zarządzania. W zarządzie pełni rolę prezesa skupiając się na koordynowaniu projektów.</p></div>
 				<div id="bodyM1">
-					<div class="item"><i class="demo-icon icon-users">&#xe800;</i><p>Członek zarządu</p></div>
-					<div class="item"><i class="demo-icon icon-users">&#xe800;</i><p>Członek zarządu</p></div>
+					<div class="item nice_shape"><i class="demo-icon icon-users">&#xe800;</i><p>Członek zarządu</p></div>
+					<div class="item nice_shape"><i class="demo-icon icon-users">&#xe800;</i><p>Członek zarządu</p></div>
 				</div>
 			</div>
 		</div>
@@ -172,10 +195,16 @@
 		</div>
 
 		<script type="text/javascript">
-		$('.text2, #skip_intro').on('click', function(){
-			setTimeout(function(){
- 		 	$('.help').fadeOut(2000);
-			}, 1);});
+			$('.text2, #skip_intro').on('click', function(){
+				setTimeout(function(){
+	 		 	$('.help').fadeOut(2000);
+				}, 1);});
+		</script>
+		<script type="text/javascript">
+			function hover(description) {
+		        console.log(description);
+		        document.getElementById('headM').innerHTML = description;
+	    	}
 		</script>
 <!--
 		<script type="text/javascript">

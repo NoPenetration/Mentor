@@ -25,18 +25,6 @@
       "src": "entypo"
     },
     {
-      "uid": "am79573ydakwiicuct1odx7f2e9zv8lv",
-      "css": "left-dir",
-      "code": 59394,
-      "src": "modernpics"
-    },
-    {
-      "uid": "gypcofts1tkouwkxbv8d33eanqpreyy9",
-      "css": "right-dir",
-      "code": 59395,
-      "src": "modernpics"
-    },
-    {
       "uid": "w3nzesrlbezu6f30q7ytyq919p6gdlb6",
       "css": "home",
       "code": 59396,
@@ -59,6 +47,12 @@
       "css": "github-circled-alt2",
       "code": 61526,
       "src": "mfglabs"
+    },
+    {
+      "uid": "8fc56819afcd07e2786e34f18d39b71b",
+      "css": "book-open",
+      "code": 59398,
+      "src": "iconic"
     }
   ]
 }

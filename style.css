@@ -7,45 +7,48 @@
 /*_Fontello - czyli te fajne ikonki xD_*/
 @font-face {
       font-family: 'fontello';
-      src: url('./font/fontello.eot?50155571');
-      src: url('./font/fontello.eot?50155571#iefix') format('embedded-opentype'),
-           url('./font/fontello.woff?50155571') format('woff'),
-           url('./font/fontello.ttf?50155571') format('truetype'),
-           url('./font/fontello.svg?50155571#fontello') format('svg');
+      src: url('./font/fontello.eot?6525345');
+      src: url('./font/fontello.eot?6525345#iefix') format('embedded-opentype'),
+           url('./font/fontello.woff?6525345') format('woff'),
+           url('./font/fontello.ttf?6525345') format('truetype'),
+           url('./font/fontello.svg?6525345#fontello') format('svg');
       font-weight: normal;
       font-style: normal;
-    }
-.demo-icon {
+}   
+.demo-icon{
       font-family: "fontello";
       font-style: normal;
       font-weight: normal;
       speak: none;
-
+     
       display: inline-block;
       text-decoration: inherit;
       width: 1em;
       margin-right: .2em;
       text-align: center;
       /* opacity: .8; */
-
+     
       /* For safety - reset parent styles, that can break glyph codes*/
       font-variant: normal;
       text-transform: none;
-
+     
       /* fix buttons height, for twitter bootstrap */
       line-height: 1em;
-
+     
       /* Animation center compensation - margins should be symmetric */
       /* remove if not needed */
       margin-left: .2em;
-
+     
       /* You can be more comfortable with increased icons size */
       /* font-size: 120%; */
-
+     
       /* Font smoothing. That was taken from TWBS */
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-	}
+     
+      /* Uncomment for 3D effect */
+      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
 #compulsory {
   font-size: 1.6vmin;
   color: red;
@@ -141,7 +144,7 @@ body {
 }
 .intro span {
   margin-left: auto;
-   margin-right: auto;
+  margin-right: auto;
 	display: block;
 }
 .text1 {
@@ -166,6 +169,7 @@ body {
 	color: #00CED1;
 	text-shadow: 0px 0px 5px #00CED1;
 }
+/*
 #skip_intro{
   color: white;
   margin-left: 5%;
@@ -174,6 +178,7 @@ body {
   animation: fOut 5s 1;
   animation-fill-mode:forwards;
 }
+*/
 @keyframes fOut{
   50%{
     opacity: 1;
@@ -211,7 +216,7 @@ body {
 /*_oraz przypisanie ich display jako flexbox_*/
 .container {
 	height: 100vh;
-	max-width:100%;
+	max-width:100vw;
 }
 .container div h2 {
 	margin: 2vmin;
@@ -222,13 +227,13 @@ body {
 	margin: 1vmin;
  	background: #07575B;
   text-align: center;
+  position: relative;
 }
 /*_Ustawienia dla grup (2 i 3 strona)_*/
 /*_Ustawienie flex direction na kolumny_*/
 .group {
-	width: 85%;
-	height: 60%;
-  border:0;
+	width: 85vw;
+	height: 85vh;
 
   display: -webkit-box;
   display: -moz-box;
@@ -238,12 +243,14 @@ body {
 	flex-direction: column;
   justify-content: space-around;
 	align-items: stretch;
+  overflow: hidden;
 }
 
 /*_________________________________*/
 /*_Ustawienia dla linków na pierwszej stronie_*/
 /*_Hover i takie tam_*/
 /*_PAMIĘTAĆ - NIE ustawiać outline na none_*/
+
 a div{
 	transition: all .5s ease-in;
 }
@@ -322,7 +329,6 @@ div .icon-user-plus:hover {
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
-  width: 100%;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -331,16 +337,23 @@ div .icon-user-plus:hover {
   margin: 1vmin;
   font-size: 8vmin;
 }
-#second .group .item{
+.item{
   padding-left: 5vmin;
   padding-right: 5vmin;
   padding-bottom: 3vmin;
-  height: auto;
 }
 /*_Ustawienia dla wszyskich diwów w grupach_*/
-.group div {
-    border-radius: 5vmin 18vmin 15vmin 15vmin;
-  height: auto;
+.nice_shape{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+
+    align-items: center;
+
+    border-radius: 0vmin 10vmin 0vmin 10vmin;
+    min-height: 20vh;
+    max-height: 20vh;
 }
 /*_Ustawienia flexboxa dla textu koła naukowego _*/
 /*_po prostu ładne wycentrowanie _*/
@@ -364,7 +377,7 @@ div .icon-user-plus:hover {
     display: -webkit-flex;
     justify-content: space-around;
     align-items: stretch;
-    height: 25vmin;
+    height: 20vmin;
 }
 /*sposób na wystające poza div elementy*/
 /* slightly enhanced, universal clearfix hack */
@@ -536,6 +549,104 @@ div .icon-user-plus:hover {
   min-width: 100%;
   max-width: 100%;
 }
+
+/*___________________________NAV___________________________*/
+#nav {
+  position: fixed;
+  left: 10px;
+  top: 40vh;
+  font-size: 1.5vmin;
+}
+#nav:hover {
+}
+#nav a div{
+  color: white;
+  margin-top: 2vmin;
+  margin-bottom: 2vmin;
+}
+#nav a:link {
+  text-decoration: none;
+}
+#nav a:visited  {
+  text-decoration: none;
+}
+#nav a:hover {
+  text-decoration: none;
+}
+#nav1 div:hover, #nav2 div:hover, #nav3 div:hover, #nav4 div:hover,#nav5 div:hover {
+  color: black;
+}
+.nav_move {
+  opacity: 0;
+}
+
+
+/*________________________TEAM____________________________*/
+#headM {
+    min-height: 20vh;
+    max-height: 20vh;
+}
+#headMbg {
+  height: auto;
+  width: auto;
+}
+
+.img {
+    min-height: 20vh;
+    max-height: 20vh;
+}
+/*
+#headM{
+  background: url(images/bond.png);
+  background-color: none;
+  background-repeat: no-repeat;
+  background-size: 20vh;
+  height: 20vh;
+  margin: 0;
+
+}
+#hearthM {
+
+ }
+#headM:hover{
+
+}
+#hover1 {
+  position: absolute;
+  margin: 0;
+  width: 30vmin;
+  overflow: hidden;
+  text-align: justify;
+  opacity: 0;
+}
+#hover1:hover {
+  animation: animationAnim 2s 1;
+  color: red;
+  width: auto;
+  overflow: visible;
+  padding-left: 35vmin;
+  padding-top: 2vmin;
+  padding-right: 5vmin;
+  opacity: 1;
+}
+
+@keyframes animationAnim {
+  0%{
+  opacity: 0;
+  padding-left: 0vmin;
+  padding-top: 2vmin;
+  }
+  50% {
+  opacity: 0;
+  padding-left: 30vmin;
+  }
+  100%{
+  padding-left: 35vmin;
+  opacity: 1;
+  }
+}
+*/
+
 /*Changes for Mobile*/
 /*________________________________________________________*/
 /*_Czyli nasza ułomna responsywność_*/
