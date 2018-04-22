@@ -217,8 +217,8 @@ body {
 #imgBg {
   position: fixed;
   height: 5vmin;
-  bottom: 5vmin;
-  right: 5vmin;
+  top: 5vmin;
+  left: 5vmin;
   animation: fIn 7s 1;
 }
 @keyframes bgIn {
@@ -615,7 +615,7 @@ div .icon-user-plus:hover {
   position: fixed;
   left: 10px;
   top: 40vh;
-  font-size: 1.5vmin;
+  font-size: 2vmin;
 }
 #nav:hover {
 }
