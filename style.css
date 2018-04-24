@@ -64,11 +64,11 @@
     display: -webkit-flex;
     justify-content: center;
     align-items: center;
-  width: 100vw;
-  height: 100vh;
+    width: 100vw;
+    height: 100vh;
 }
 #contact_form {
-  max-width: 90vmin;
+  max-width: 85vmin;
   margin-left: auto;
   margin-right: auto;
   max-height: 90vmin;
@@ -113,8 +113,8 @@ input, textarea {
 html, body {
 	margin:0;
 	padding:0;
-	height:100%;
 	width:100vw;
+  height:100vh;
 	cursor: default;
 	user-select: none;
 }
@@ -127,9 +127,10 @@ body {
   /*background-color: #66A5AD;*/
 
   background-image: url(images/bg.jpg);
-  background-size: 100%;
+  background-position: center;
   background-attachment: fixed;
   background-size: cover;
+  background-repeat: no-repeat;
   color: #C4DFE6;
   overflow-y: hidden;
 }
@@ -144,7 +145,7 @@ body {
 	position: absolute;
 	z-index: 2;
   background-image: url("images/var3.jpg");
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 .intro {
@@ -166,7 +167,12 @@ body {
 	letter-spacing: 8px;
 	margin-bottom: 20px;
 	position: relative;
-	animation: text 4s 1;
+	animation: textAnim 4s 1;
+}
+#addonstex1 {
+  letter-spacing: 4px;
+  font-size: 30px;
+  animation: text2Anim 4s 1;
 }
 .intro a {
 	letter-spacing: 1px;
@@ -180,16 +186,6 @@ body {
 	color: white;
 	text-shadow: 0px 0px 5px #00CED1;
 }
-/*
-#skip_intro{
-  color: white;
-  margin-left: 5%;
-  margin-top: 90%;
-  position: fixed;
-  animation: fOut 5s 1;
-  animation-fill-mode:forwards;
-}
-*/
 @keyframes fOut{
   0% {
   color:white;
@@ -246,7 +242,7 @@ body {
 }
 
 
-@keyframes text {
+@keyframes textAnim {
 	0%{
 		color: black;
 		margin-bottom: -40px;
@@ -260,6 +256,18 @@ body {
 		letter-spacing: 8px;
 		margin-bottom: -40px;
 	}
+}
+@keyframes text2Anim {
+  0%{
+    color: black;
+    letter-spacing: 4px
+  }
+  30%{
+    letter-spacing: 8px;
+  }
+  85%{
+    letter-spacing: 4px;
+  }
 }
 
 /*_________________________________________*/
@@ -280,12 +288,16 @@ body {
 	margin: 1vmin;
   background-color: rgba(0,0,0,0.5);
   text-align: center;
-  position: relative;
+  padding-bottom: 1.5vmin;
+  padding-left: 5vmin;
+  padding-right: 5vmin;
+  padding-top: 1.5vmin;
 }
+
 /*_Ustawienia dla grup (2 i 3 strona)_*/
 /*_Ustawienie flex direction na kolumny_*/
 .group {
-	width: 85vw;
+	width: 80vw;
 	height: 80vh;
 
   display: -webkit-box;
@@ -304,17 +316,17 @@ body {
 /*_Hover i takie tam_*/
 /*_PAMIĘTAĆ - NIE ustawiać outline na none_*/
 
-a div{
+#first a div{
 	transition: all .5s ease-in;
 }
 
-a:link {
+#first a:link {
 	text-decoration: none;
 }
-a:visited  {
+#first a:visited  {
 	text-decoration: none;
 }
-a div:hover {
+#first a div:hover {
 	text-decoration: none;
 	transition: all .5s ease-in;
 }
@@ -396,13 +408,6 @@ div .icon-user-plus:hover {
 #third i {
   margin: 1vmin;
   font-size: 8vmin;
-}
-
-.item{
-  padding-bottom: 1.5vmin;
-  padding-left: 5vmin;
-  padding-right: 5vmin;
-  padding-top: 1.5vmin;
 }
 /*_Ustawienia dla wszyskich diwów w grupach_*/
 .nice_shape{
@@ -494,32 +499,48 @@ div .icon-user-plus:hover {
   display: -webkit-flex;
   justify-content: space-around;
   align-items: stretch;
+  align-self: flex-end;
 
 
   overflow: hidden;
   max-height: 65vh;
   min-height: 65vh;
-	background-color: #478594;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(0,0,0,0.5);
+	/*background-color: #478594;*/
 	height: 100%
 }
 
 #for {
-  max-height: 66%;
-  min-height: 66%;
+  margin-bottom: 0;
+  margin-top: auto;
+  background-image: url(images/bg2.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  max-height: 100vh;
+  min-height: 100vh;
 	text-align: center;
 	font-size: 2vh;
-}
 
-#for div {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
 
-	background-color: #478594;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
 }
 /*_Wszystkie divy bezpośrednio w footerze mają określoną szerokość_*/
 #last > div {
-
 	width: 30%;
 }
-
 /*_________________________________*/
 /*_Ustawienia dla sektora z logami_*/
 #logos, #more {
@@ -552,9 +573,6 @@ div .icon-user-plus:hover {
 	font-size: 10vmin;
 	margin-top: 2vmin;
 }
-#more {
-
-}
 .icon-github-circled-alt2:hover {
 	color: black;
 	transition: all .5s ease-in;
@@ -578,8 +596,14 @@ div .icon-user-plus:hover {
 	font-size: 3vmin;
 }
 
-#foot{;
+#foot{
+  width: 100%;
   font-size: 1.5vmin;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(0,0,0,0.5);
 }
 
 
@@ -615,9 +639,7 @@ div .icon-user-plus:hover {
   position: fixed;
   left: 10px;
   top: 40vh;
-  font-size: 2vmin;
-}
-#nav:hover {
+  font-size: 2.5vmin;
 }
 #nav a div{
   color: white;
@@ -660,69 +682,214 @@ div .icon-user-plus:hover {
   display: inline-block;
   vertical-align: center;
 }
-
 #headMbg {
   height: auto;
   width: auto;
 }
-
 .img {
     min-height: 20vh;
     max-height: 20vh;
 }
-/*
-#headM{
-  background: url(images/bond.png);
-  background-color: none;
-  background-repeat: no-repeat;
-  background-size: 20vh;
-  height: 20vh;
-  margin: 0;
-
-}
-#hearthM {
-
- }
-#headM:hover{
-
-}
-#hover1 {
-  position: absolute;
-  margin: 0;
-  width: 30vmin;
-  overflow: hidden;
-  text-align: justify;
-  opacity: 0;
-}
-#hover1:hover {
-  animation: animationAnim 2s 1;
-  color: red;
-  width: auto;
-  overflow: visible;
-  padding-left: 35vmin;
-  padding-top: 2vmin;
-  padding-right: 5vmin;
-  opacity: 1;
-}
-
-@keyframes animationAnim {
-  0%{
-  opacity: 0;
-  padding-left: 0vmin;
-  padding-top: 2vmin;
-  }
-  50% {
-  opacity: 0;
-  padding-left: 30vmin;
-  }
-  100%{
-  padding-left: 35vmin;
-  opacity: 1;
-  }
-}
-*/
-
 /*Changes for Mobile*/
 /*________________________________________________________*/
 /*_Czyli nasza ułomna responsywność_*/
 /*_nad tym trzeba mocno popracować_*/
+#mobile{
+  display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  .disp{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+
+  }
+  #desktop{
+    display: none;
+  }
+  #mobile{
+    display: initial;
+  }
+  body{
+    overflow-y:visible;
+    overflow-x:hidden;
+  }
+  #firstScreen{
+    height: 100%;
+    width: 100%;
+
+    background: url(images/var3.jpg);
+    background-size: cover;
+    display: table;
+    position: relative;
+    font-size: 8vmin;
+    color: white;
+  }
+        #firstScreen #inner{
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        width: 100%;
+        max-width: none;
+        top: 40%;
+        position: absolute;
+        }
+        #h{
+        font-size: 200%;
+        margin-top: 0px;
+        }
+
+  #secondScreen{
+    height: 100%;
+    width: 100%;
+    font-size: 8vmin;
+    color: white;
+  }
+        a:link, a:visited, a div:hover {
+          text-decoration: none;
+        }
+        #secondButtons {
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;  
+            height: 100%;
+        }
+        #secondButtons div {
+          height: 25vmin;
+          width: 25vmin;
+          display: flex;
+          margin-left: 2.5vmin; 
+          margin-right: 2.5vmin;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-size: 15vmin;
+          transition: all .5s ease-in;
+          color: white;
+        }
+        .tile {
+          height: 20vmin;
+          width: 20vmin;
+          background-color: black;
+          background-color: rgba(0,0,0,0.5);
+        }
+        #secondButtons p {
+          font-size: 3vmin;
+        }
+        #secondButtons div p {
+          margin-top: 1vh;
+        }
+
+  #thirdScreen{
+    height: 100%;
+    width: 100%;
+    font-size: 5vmin;
+    color: white;
+    justify-content: center;
+    align-items: center;
+
+  }
+        #moblieCss, #moblieHtml, #moblieCsharp, #moblieNet, #moblieJs {
+        max-width: 85%;
+        max-height: 85%;
+        transition: all .5s ease-in;
+        }
+
+  #fourthScreen {
+    height: 200%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    font-size: 3vmin;
+    color: white;
+  }
+        .moblieShape{
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 0vmin 10vmin 0vmin 10vmin;
+            min-height: 30vh;
+            max-height: 30vh;
+            width: 80vw;
+        }
+        #about{
+            justify-content: center;
+            align-items: center;
+            border-radius: 10vmin;
+            padding: 3vmin;
+            text-shadow: 0px 0px 5px #000;
+        }
+        #bodyM1, #tech, #tech2 {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            justify-content: space-around;
+            align-items: stretch;
+            height: 30vmin;
+        }
+        .head{
+          min-height: 30vmin;
+          max-height: 30vmin;
+          width: 100%;
+
+          display: -webkit-box;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .mobileText {
+          text-align: justify;
+          padding: 3vmin;
+          text-align: left;
+          display: inline-block;
+          vertical-align: center;
+        }
+        .headMbg {
+          height: auto;
+          width: auto;
+        }
+        .img {
+          min-height: 30vmin;
+          max-height: 30vmin;
+        }
+  #lastScreen {
+    height: 66%;
+    width: 100%;
+  }
+        #footer {
+          text-align: center;
+          width: 100%;
+          font-size: 1.5vmin;
+          background-color: rgba(0,0,0,0.5);
+        }
+        .icon-github-circled-alt2 {
+          color: white;
+        }
+        .icon-cloud {
+          color: white;
+        }
+        .icon-facebook {
+          color: white;
+        }
+        .icon-github-circled-alt2:hover {
+          color: white;
+        }
+        .icon-cloud:hover {
+          color: white;
+        }
+        .icon-facebook:hover {
+          color: white;
+        }
+}
