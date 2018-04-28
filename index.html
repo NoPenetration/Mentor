@@ -31,6 +31,10 @@
 				$('#nav4').click(function(){ $.scrollTo($('#fourth'), 2000); });
 				$('#nav5').click(function(){ $.scrollTo($('#last'), 2000); });
 
+
+				$('#lower').click(function(){ $.scrollTo($('#thirdPlus'), 2000); });
+				$('#upper').click(function(){ $.scrollTo($('#third'), 2000); });
+
 				$(window).scroll(function()
 				{
 					var windowHeight = $(window).scrollTop()
@@ -49,9 +53,9 @@
 			});
 			});
 
-			function hover(description) {
+			function hover(description, functionTarget) {
 		        console.log(description);
-		        document.getElementById('jd').innerHTML = description;
+		        document.getElementById(functionTarget).innerHTML = description;
 	    	}
 		</script>
 
@@ -113,22 +117,49 @@
 						<h2>Zespół</h2>
 
 						<div class="item nice_shape" >
-							<div id="headMbg" onmouseover="hover('Adiunkt w Katedrze Informatyki Stosowanej na Wydziale Zarządzania AGH.<br/>Odpowiedzialny jest za rozwój naukowy oraz wsparcie merytoryczne.')"
-							onmouseout="hover('Jerzy Duda')">
-								<img class="img" alt="" src="images/bond.png">
+
+							<div class="headMbg">
+								<img class="img" alt="" src="images/skipper.jpg" onmouseover="hover('Adiunkt w Katedrze Informatyki Stosowanej na Wydziale Zarządzania AGH.<br/>Odpowiedzialny jest za rozwój naukowy oraz wsparcie merytoryczne.', 'jd')"
+							onmouseout="hover('Jerzy Duda', 'jd')">
 							</div>
-							<div id="headM" >
+							<div class="headM" >
 								<span id="jd">Jerzy Duda</span>
 							</div>
 						</div>
 
 						<div class="item nice_shape">
-							<i class="demo-icon icon-users">&#xe800;</i>
-							<p>Studentka 3 roku Informatykii i ekonometrii. Pasjonatka podróży, informatyki i zarządzania. W zarządzie pełni rolę prezesa skupiając się na koordynowaniu projektów.</p>
+							<div class="headMbg" >
+								<img class="img" alt="" src="images/private.jpg" onmouseover="hover('Studentka 3 roku Informatykii i ekonometrii. Pasjonatka podróży, informatyki i zarządzania.<br/> W zarządzie pełni rolę prezesa skupiając się na koordynowaniu projektów.', 'sg')"
+							onmouseout="hover('Sabina Golonka', 'sg')">
+							</div>
+							<div class="headM" >
+								<span id="sg">Sabina Golonka</span>
+							</div>
 						</div>
-						<div id="bodyM1">
-							<div class="item nice_shape"><i class="demo-icon icon-users">&#xe800;</i><p>Członek zarządu</p></div>
-							<div class="item nice_shape"><i class="demo-icon icon-users">&#xe800;</i><p>Członek zarządu</p></div>
+						<div class="item nice_shape">
+								<div class="headMbg" >
+									<img class="img" alt="" src="images/kowalski.jpg" onmouseover="hover('Tutaj będzie długi i wyczerpujący opis członka zarządu.', 'mw')"
+								onmouseout="hover('Monika Wielgus', 'mw')">
+								</div>
+								<div class="headM" >
+									<span id="mw">Monika Wielgus</span>
+								</div>
+						</div>
+					</div>
+					<a id="lower">LOWER</a>
+				</div>
+
+				<div class="container" id="thirdPlus">
+					<a id="upper">UPPER</a>
+					<div class="group clearfix">
+						<div class="item nice_shape">
+								<div class="headMbg">
+									<img class="img" alt="" src="images/ricko.jpg"  onmouseover="hover('Tutaj będzie długi i wyczerpujący opis członka zarządu.', 'pg')"
+								onmouseout="hover('Piotr Gretszel', 'pg')">
+								</div>
+								<div class="headM" >
+									<span id="pg">Piotr Gretszel</span>
+								</div>
 						</div>
 					</div>
 				</div>
@@ -213,14 +244,15 @@
 								ul. Gramatyka 10<br/>
 								30-067 Kraków<br/>
 								NIP AGH: 6750001923<br/><br/>
-								naszMail@gmail.com
+								kolo.mentor@gmail.com
+
 							</p>
 						</div>
 						<div id="more">
 							<p>Śledź nas:</p>
-							<a href="https://www.facebook.com/groups/295643830927683/?ref=br_rs"><i class="demo-icon icon-facebook">&#xf30c;</i></a>
-							<a href="https://www.dropbox.com/"><i class="demo-icon icon-cloud">&#xe805;</i></a>
-							<a href="https://github.com/"><i class="demo-icon icon-github-circled-alt2">&#xf056;</i></a>
+							<a href="https://www.facebook.com/KNMentor/" target="_blank"><i class="demo-icon icon-facebook">&#xf30c;</i></a>
+							<a href="https://www.dropbox.com/" target="_blank"><i class="demo-icon icon-cloud">&#xe805;</i></a>
+							<a href="https://github.com/" target="_blank"><i class="demo-icon icon-github-circled-alt2">&#xf056;</i></a>
 						</div>
 					</div>
 
@@ -277,7 +309,7 @@
 							</div>
 
 							<div class="head" >
-								<span class="mobileText"><h2>Jerzy Duda</h2><br/>
+								<span class="mobileText"><h3>Jerzy Duda</h3><br/>
 									Adiunkt w Katedrze Informatyki Stosowanej na Wydziale Zarządzania AGH.Odpowiedzialny jest za rozwój naukowy oraz wsparcie merytoryczne.
 								</span>
 							</div>
@@ -289,7 +321,7 @@
 							</div>
 
 							<div class="head" >
-								<span class="mobileText"><h2>Sabina Golonka</h2><br/>
+								<span class="mobileText"><h3>Sabina Golonka</h3><br/>
 									Studentka 3 roku Informatykii i ekonometrii. Pasjonatka podróży, informatyki i zarządzania. W zarządzie pełni rolę prezesa skupiając się na koordynowaniu projektów.
 								</span>
 							</div>
@@ -301,7 +333,7 @@
 							</div>
 
 							<div class="head" >
-								<span class="mobileText"><h2>Monika Wielgus</h2><br/>
+								<span class="mobileText"><h3>Monika Wielgus</h3><br/>
 									Studentka 3 roku Informatykii i ekonometrii. Pasjonatka podróży, informatyki i zarządzania. W zarządzie pełni rolę prezesa skupiając się na koordynowaniu projektów.
 								</span>
 							</div>
@@ -313,7 +345,7 @@
 							</div>
 
 							<div class="head" >
-								<span class="mobileText"><h2>Piotr Gretszel</h2><br/>
+								<span class="mobileText"><h3>Piotr Gretszel</h3><br/>
 									Studentka 3 roku Informatykii i ekonometrii. Pasjonatka podróży, informatyki i zarządzania. W zarządzie pełni rolę prezesa skupiając się na koordynowaniu projektów.
 								</span>
 							</div>
@@ -335,14 +367,15 @@
 								ul. Gramatyka 10<br/>
 								30-067 Kraków<br/>
 								NIP AGH: 6750001923<br/><br/>
-								naszMail@gmail.com
+								kolo.mentor@gmail.com
+
 							</p>
 						</div>
 						<div id="more">
 							<p>Śledź nas:</p>
-							<a href="https://www.facebook.com/groups/295643830927683/?ref=br_rs"><i class="demo-icon icon-facebook">&#xf30c;</i></a>
-							<a href="https://www.dropbox.com/"><i class="demo-icon icon-cloud">&#xe805;</i></a>
-							<a href="https://github.com/"><i class="demo-icon icon-github-circled-alt2">&#xf056;</i></a>
+							<a href="https://www.facebook.com/KNMentor/" target="_blank"><i class="demo-icon icon-facebook">&#xf30c;</i></a>
+							<a href="https://www.dropbox.com/" target="_blank"><i class="demo-icon icon-cloud">&#xe805;</i></a>
+							<a href="https://github.com/" target="_blank"><i class="demo-icon icon-github-circled-alt2">&#xf056;</i></a>
 						</div>
 					</div>
 
