@@ -399,7 +399,17 @@ div .icon-user-plus:hover {
 /*_Druga i trzecia strona_*/
 /*_Ustawienia flexboxa _*/
 /*_i dodatkowe ustawienia dla drugiej strony _*/
-#third, #second, #thirdPlus {
+#third, #second{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+#thirdPlus {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -474,7 +484,7 @@ div .icon-user-plus:hover {
   height: 100%;
   text-align: center;
 }
-#tech > div,#techM > div {
+#tech > div, #techM > div {
   width: 100%;
   height: 100%;
   text-align: center;
@@ -549,7 +559,7 @@ div .icon-user-plus:hover {
 }
 /*_________________________________*/
 /*_Ustawienia dla sektora z logami_*/
-#logos, #more,#logosM, #moreM {
+#logos, #more, #logosM, #moreM {
   	display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -602,7 +612,7 @@ div .icon-user-plus:hover {
 	font-size: 3vmin;
 }
 
-#foot, #footM{
+#foot, #footerM{
   width: 100%;
   font-size: 1.5vmin;
   background-position: center;
@@ -877,7 +887,7 @@ div .icon-user-plus:hover {
     height: 66%;
     width: 100%;
   }
-        #footer {
+        #footerM {
           text-align: center;
           width: 100%;
           font-size: 1.5vmin;
