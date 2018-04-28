@@ -425,7 +425,7 @@ div .icon-user-plus:hover {
 }
 /*_Ustawienia flexboxa dla textu koła naukowego _*/
 /*_po prostu ładne wycentrowanie _*/
-#wheelP, #loc {
+#wheelP, #loc, #locM {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -439,7 +439,7 @@ div .icon-user-plus:hover {
 }
 /*_Ustawienia dla dwóch pojemników na divy _*/
 /*_kilka divów w jednej linii poziomej _*/
-#bodyM1, #tech, #tech2 {
+#bodyM1, #tech, #techM {
     width: 100%;
     display: -webkit-box;
     display: -moz-box;
@@ -474,7 +474,7 @@ div .icon-user-plus:hover {
   height: 100%;
   text-align: center;
 }
-#tech > div {
+#tech > div,#techM > div {
   width: 100%;
   height: 100%;
   text-align: center;
@@ -498,7 +498,7 @@ div .icon-user-plus:hover {
 /*_________________________________*/
 /*_Ustawienia naszego footera_*/
 /*_o po prostu ładne, pełne kolumny_*/
-#last {
+#last, #lastM {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -544,12 +544,12 @@ div .icon-user-plus:hover {
     align-items: center;
 }
 /*_Wszystkie divy bezpośrednio w footerze mają określoną szerokość_*/
-#last > div {
+#last > div, #lastM > div {
 	width: 30%;
 }
 /*_________________________________*/
 /*_Ustawienia dla sektora z logami_*/
-#logos, #more {
+#logos, #more,#logosM, #moreM {
   	display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -560,13 +560,13 @@ div .icon-user-plus:hover {
   	align-items: center;
 }
 /*_Ustawienie max szerokości dla diva obrazków_*/
-#logos div {
+#logos div, #logosM div  {
 	height: auto;
 	width: auto;
 	max-width: 20vmin;
 }
 /*_Ustawienia obrazków_*/
-#logos div img {
+#logos div img, #logosM div img {
     max-height: 100%;
     max-width: 100%;
 }
@@ -575,7 +575,7 @@ div .icon-user-plus:hover {
 /*________________________________*/
 /*_Ustawnia dla dodatkowych ikonek_*/
 /*_i tak - kiedyś zrobimy sobie google driva xD_*/
-#more i {
+#more i, #moreM i {
 	font-size: 10vmin;
 	margin-top: 2vmin;
 }
@@ -597,12 +597,12 @@ div .icon-user-plus:hover {
 }
 
 
-#loc p{
+#loc p, #locM p{
 	text-align: center;
 	font-size: 3vmin;
 }
 
-#foot{
+#foot, #footM{
   width: 100%;
   font-size: 1.5vmin;
   background-position: center;
