@@ -717,6 +717,10 @@ div .icon-user-plus:hover {
 #lower:hover, #upper:hover {
   text-shadow: 0 0 1vmin white;
 }
+
+.too-long {
+    font-size: 2vmin;
+}
 /*Changes for Mobile*/
 /*________________________________________________________*/
 /*_Czyli nasza ułomna responsywność_*/

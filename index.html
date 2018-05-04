@@ -57,11 +57,13 @@
 		        console.log(description);
 		        document.getElementById(functionTarget).innerHTML = description;
 	    	}
-		</script>
+            
+
+        </script>
 
 	</head>
 
-	<body>
+	<body onresize="myFunction()">
 		<div id="desktop">
 				<div class="help container">
 					<div class="intro">
@@ -88,6 +90,7 @@
 					<div class="bg1" >
 					</div>
 				</div>
+
 
 				<div class="container" id="th">
 					<div id="second">
@@ -119,8 +122,8 @@
 						<div class="item nice_shape" >
 
 							<div class="headMbg">
-								<img class="img" alt="" src="images/skipper.jpg" onmouseover="hover('Adiunkt w Katedrze Informatyki Stosowanej na Wydziale Zarządzania AGH.<br/>Odpowiedzialny jest za rozwój naukowy oraz wsparcie merytoryczne.', 'jd')"
-							onmouseout="hover('Jerzy Duda', 'jd')">
+								<img class="img" alt="" src="images/skipper.jpg" onmouseover="hover('Opiekun <br/>Adiunkt w Katedrze Informatyki Stosowanej na Wydziale Zarządzania AGH.<br/>Odpowiedzialny jest za rozwój naukowy oraz wsparcie merytoryczne.', 'jd')"
+							onmouseout="hover('Dr inż. Jerzy Duda', 'jd')">
 							</div>
 							<div class="headM" >
 								<span id="jd">Jerzy Duda</span>
@@ -129,7 +132,7 @@
 
 						<div class="item nice_shape">
 							<div class="headMbg" >
-								<img class="img" alt="" src="images/private.jpg" onmouseover="hover('Studentka 3 roku Informatykii i ekonometrii. Pasjonatka podróży, informatyki i zarządzania.<br/> W zarządzie pełni rolę prezesa skupiając się na koordynowaniu projektów.', 'sg')"
+								<img class="img" alt="" src="images/private.jpg" onmouseover="hover('Prezes Zarządu <br/>Studentka 3 roku Informatykii i ekonometrii. Pasjonatka podróży, informatyki i zarządzania.<br/> W zarządzie pełni rolę prezesa skupiając się na koordynowaniu projektów.', 'sg')"
 							onmouseout="hover('Sabina Golonka', 'sg')">
 							</div>
 							<div class="headM" >
@@ -138,7 +141,7 @@
 						</div>
 						<div class="item nice_shape">
 								<div class="headMbg" >
-									<img class="img" alt="" src="images/kowalski.jpg" onmouseover="hover('Tutaj będzie długi i wyczerpujący opis członka zarządu.', 'mw')"
+									<img class="img" alt="" src="images/kowalski.jpg" onmouseover="hover('Wiceprezes Zarządu <br/>Studentka V roku Informatyki i Ekonometrii pasjonująca się programowaniem, szczególnie w C#. Ponadto wielbicielka tańca, meczy piłki nożnej oraz dźwięku skrzypiec.', 'mw')"
 								onmouseout="hover('Monika Wielgus', 'mw')">
 								</div>
 								<div class="headM" >
@@ -146,22 +149,22 @@
 								</div>
 						</div>
 					</div>
-					<a id="lower">LOWER</a>
+					<a id="lower">Dalej</a>
 				</div>
 
 				<div class="container" id="thirdPlus">
-					<a id="upper">LOWER</a>
+					<a id="upper">Wstecz</a>
 					<div class="group clearfix">
 						<h2>Zespół</h2>
 
 						<div class="item nice_shape" >
 
 							<div class="headMbg">
-								<img class="img" alt="" src="images/ricko.jpg" onmouseover="hover('Adiunkt w Katedrze Informatyki Stosowanej na Wydziale Zarządzania AGH.<br/>Odpowiedzialny jest za rozwój naukowy oraz wsparcie merytoryczne.', 'pg')"
-							onmouseout="hover('Piotr Gretszel', 'pg')">
+								<img class="img" alt="" src="images/ricko.jpg" onmouseover="hover('Członek Zarządu <br/>Student 3 roku Informatyki i Ekonometrii. Interesuje się analizą danych i zagadnieniami ekonometrycznymi. W dziedzinie informatyki związany z środowiskiem .NET, językiem C# i technikami webowymi. Prywatnie miłośnik aktwyności sportowej, muzyki i poznawania świata. Jego rola w zarządzie to wspomaganie podejmowania decyzji i służenie dobrą radą.', 'pg')"
+								onmouseout="hover('Piotr Gretszel', 'pg')">
 							</div>
 							<div class="headM" >
-								<span id="pg">Piotr Gretszel</span>
+								<span class="too-long" id="pg">Piotr Gretszel</span>
 							</div>
 						</div>
 					</div>
@@ -311,7 +314,8 @@
 							</div>
 
 							<div class="head" >
-								<span class="mobileText">Jerzy Duda<br/>
+								<span class="mobileText"><h3>Dr inż.Jerzy Duda</h3><br/>
+                                    Opiekun<br/>
 									Adiunkt w Katedrze Informatyki Stosowanej na Wydziale Zarządzania AGH.Odpowiedzialny jest za rozwój naukowy oraz wsparcie merytoryczne.
 								</span>
 							</div>
@@ -323,7 +327,7 @@
 							</div>
 
 							<div class="head" >
-								<span class="mobileText">Sabina Golonka<br/>
+								<span class="mobileText"><h3>Sabina Golonka</h3><br/>Prezes zarządu<br/>
 									Studentka 3 roku Informatykii i ekonometrii. Pasjonatka podróży, informatyki i zarządzania. W zarządzie pełni rolę prezesa skupiając się na koordynowaniu projektów.
 								</span>
 							</div>
@@ -335,8 +339,8 @@
 							</div>
 
 							<div class="head" >
-								<span class="mobileText">Monika Wielgus<br/>
-									Studentka 3 roku Informatykii i ekonometrii. Pasjonatka podróży, informatyki i zarządzania. W zarządzie pełni rolę prezesa skupiając się na koordynowaniu projektów.
+								<span class="mobileText"><h3>Monika Wielgus</h3><br/>Wiceprezes Zarządu<br/>
+									Studentka V roku Informatyki i Ekonometrii pasjonująca się programowaniem, szczególnie w C#. Ponadto wielbicielka tańca, meczy piłki nożnej oraz dźwięku skrzypiec.
 								</span>
 							</div>
 				</div>
@@ -347,8 +351,7 @@
 							</div>
 
 							<div class="head" >
-								<span class="mobileText">Piotr Gretszel<br/>
-									Studentka 3 roku Informatykii i ekonometrii. Pasjonatka podróży, informatyki i zarządzania. W zarządzie pełni rolę prezesa skupiając się na koordynowaniu projektów.
+								<span class="mobileText"><h3>Piotr Gretszel</h3><br/>Członek Zarządu <br/>Student 3 roku Informatyki i Ekonometrii. Interesuje się analizą danych i zagadnieniami ekonometrycznymi. W dziedzinie informatyki związany z środowiskiem .NET, językiem C# i technikami webowymi. Prywatnie miłośnik aktwyności sportowej, muzyki i poznawania świata. Jego rola w zarządzie to wspomaganie podejmowania decyzji i służenie dobrą radą.
 								</span>
 							</div>
 				</div>	
@@ -388,24 +391,6 @@
 			</div>
 		</div>
 
-
-<!--
-		<script type="text/javascript">
-		$('#im2').on('mouseover', function() {
-	 		$(this).find('img').attr('src', 'images/zarz.png');
-			});
-		$('#im2').on('mouseleave', function() {
-	 		$(this).find('img').attr('src', 'images/zar.png');
-			});
-
-		$('#im3').on('mouseover', function() {
-	 		$(this).find('img').attr('src', 'images/ag.png');
-			});
-		$('#im3').on('mouseleave', function() {
-	 		$(this).find('img').attr('src', 'images/agh.png');
-			});
-		</script>
-	-->
 	</body>
 
 
